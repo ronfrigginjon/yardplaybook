@@ -1,20 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
-const articles: Record<string, {title: string, body: JSX.Element, description: string}> = {
+const articles: Record<
+  string,
+  { title: string; body: JSX.Element; description: string; faq?: any }
+> = {
   overseeding: {
     title: "When to Overseed Your Lawn (By Region)",
-    description: "Timing your overseeding is the difference between lush and lackluster.",
+    description:
+      "Timing your overseeding is the difference between lush and lackluster.",
     body: (
       <>
-        <p>Overseeding refreshes thinning lawns. The ideal timing depends on your grass type and climate.</p>
-        <h3 className="text-xl font-semibold mt-6">Cool-Season Grasses (Midwest / Northeast)</h3>
-        <p>Best: Late summer to early fall (soil is warm, air is cooler, fewer weeds). Secondary window: early spring.</p>
-        <h3 className="text-xl font-semibold mt-6">Warm-Season Grasses (South / Sunbelt)</h3>
-        <p>Best: Late spring to early summer after soil temps consistently exceed ~65°F.</p>
-        <p className="mt-4">Prep matters: mow low, rake up thatch, core aerate if possible, seed-to-soil contact, and keep it moist.</p>
+        <p>
+          Overseeding refreshes thinning lawns. The ideal timing depends on your
+          grass type and climate.
+        </p>
+        <h3 className="text-xl font-semibold mt-6">
+          Cool-Season Grasses (Midwest / Northeast)
+        </h3>
+        <p>
+          Best: Late summer to early fall (soil is warm, air is cooler, fewer
+          weeds). Secondary window: early spring.
+        </p>
+        <h3 className="text-xl font-semibold mt-6">
+          Warm-Season Grasses (South / Sunbelt)
+        </h3>
+        <p>
+          Best: Late spring to early summer after soil temps consistently exceed
+          ~65°F.
+        </p>
+        <p className="mt-4">
+          Prep matters: mow low, rake up thatch, core aerate if possible,
+          seed-to-soil contact, and keep it moist.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-6">FAQs</h3>
+        <ul className="list-disc ml-6 space-y-2">
+          <li>
+            <strong>Can I overseed in spring?</strong> Yes, but fall is better
+            for cool-season grass.
+          </li>
+          <li>
+            <strong>Do I need to aerate before overseeding?</strong> It helps
+            seed-to-soil contact; highly recommended if soil is compacted.
+          </li>
+        </ul>
       </>
     ),
+    faq: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Can I overseed in spring?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, but fall is better for cool-season grasses due to warm soil and mild air.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need to aerate before overseeding?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Aeration improves seed-to-soil contact and is recommended for compacted lawns.",
+          },
+        },
+      ],
+    },
   },
   mistakes: {
     title: "5 Common Lawn Care Mistakes (and How to Avoid Them)",
@@ -22,11 +77,25 @@ const articles: Record<string, {title: string, body: JSX.Element, description: s
     body: (
       <>
         <ol className="list-decimal ml-6 space-y-2">
-          <li>Mowing too short (scalping). Aim for the 1/3rd rule.</li>
-          <li>Watering frequently but shallow. Water deeply and less often.</li>
-          <li>Over/under fertilizing. Follow a seasonal plan and recommended rates.</li>
-          <li>Ignoring soil health. Test pH, add organic matter, manage compaction.</li>
-          <li>Seeding without prep. Ensure seed-to-soil contact and proper timing.</li>
+          <li>
+            Mowing too short (scalping). Aim for the 1/3rd rule — never cut more
+            than one-third of the blade at once.
+          </li>
+          <li>
+            Watering frequently but shallow. Water deeply and less often for
+            stronger roots.
+          </li>
+          <li>
+            Over/under fertilizing. Follow a seasonal plan and recommended
+            rates.
+          </li>
+          <li>
+            Ignoring soil health. Test pH, add organic matter, manage
+            compaction.
+          </li>
+          <li>
+            Seeding without prep. Ensure seed-to-soil contact and proper timing.
+          </li>
         </ol>
       </>
     ),
@@ -36,12 +105,17 @@ const articles: Record<string, {title: string, body: JSX.Element, description: s
     description: "A simple weekend plan to protect your lawn and tools.",
     body: (
       <>
-        <p>Winterizing protects your turf and equipment so you can hit spring running.</p>
+        <p>
+          Winterizing protects your turf and equipment so you can hit spring
+          running.
+        </p>
         <ul className="list-disc ml-6 space-y-2">
           <li>Final mow a notch lower to reduce matting.</li>
           <li>Apply a late-fall fertilizer for root strength.</li>
           <li>Blow out irrigation / hoses; store hoses indoors.</li>
-          <li>Clean and stabilize mower fuel; change oil and sharpen blade.</li>
+          <li>
+            Clean and stabilize mower fuel; change oil and sharpen the blade.
+          </li>
           <li>Rake/mulch leaves to prevent smothering.</li>
         </ul>
       </>
@@ -49,7 +123,11 @@ const articles: Record<string, {title: string, body: JSX.Element, description: s
   },
 };
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
   const a = articles[params.slug];
   return {
     title: a ? `${a.title} — YardPlaybook` : "YardPlaybook",
@@ -64,7 +142,9 @@ export default function Article({ params }: { params: { slug: string } }) {
       <main className="mx-auto max-w-3xl px-6 py-16">
         <h1 className="text-2xl font-bold mb-2">Not Found</h1>
         <p className="mb-4">The article you’re looking for doesn’t exist.</p>
-        <Link className="text-green-800 underline" href="/blog">Back to Blog</Link>
+        <Link className="text-green-800 underline" href="/blog">
+          Back to Blog
+        </Link>
       </main>
     );
   }
@@ -74,8 +154,19 @@ export default function Article({ params }: { params: { slug: string } }) {
       <p className="text-gray-600 mb-6">{a.description}</p>
       <div className="[&>*]:mb-3">{a.body}</div>
       <div className="mt-8">
-        <Link className="text-green-800 underline" href="/blog">← All articles</Link>
+        <Link className="text-green-800 underline" href="/blog">
+          ← All articles
+        </Link>
       </div>
+
+      {/* FAQ Schema for Overseeding */}
+      {a.faq && (
+        <Script
+          id={`faq-${params.slug}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(a.faq) }}
+        />
+      )}
     </main>
   );
 }

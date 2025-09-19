@@ -5,18 +5,26 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "YardPlaybook — Your Game Plan for a Better Yard",
-  description: "Seasonal reminders, step-by-step checklists, and expert tips to keep your lawn winning all year long.",
+  description:
+    "Seasonal reminders, step-by-step checklists, and expert tips to keep your lawn winning all year long.",
   metadataBase: new URL("https://yardplaybook.com"),
+  alternates: { canonical: "/" },
   openGraph: {
     title: "YardPlaybook — Your Game Plan for a Better Yard",
-    description: "Seasonal reminders, step-by-step checklists, and expert tips to keep your lawn winning all year long.",
+    description:
+      "Seasonal reminders, step-by-step checklists, and expert tips to keep your lawn winning all year long.",
     url: "https://yardplaybook.com",
     siteName: "YardPlaybook",
-    type: "website"
+    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
+    type: "website",
   },
-  alternates: {
-    canonical: "/"
-  }
+  twitter: {
+    card: "summary_large_image",
+    title: "YardPlaybook — Your Game Plan for a Better Yard",
+    description:
+      "Seasonal reminders, step-by-step checklists, and expert tips to keep your lawn winning all year long.",
+    images: ["/og.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,7 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
+
         {children}
+
         <footer className="mt-16 bg-green-800 text-white">
           <div className="mx-auto max-w-6xl px-6 py-10 grid gap-8 md:grid-cols-3">
             <div>
@@ -66,6 +76,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             © 2025 YardPlaybook — All Rights Reserved
           </div>
         </footer>
+
+        {/* Google Analytics (GA4) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z3S1JDHXQ" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-7Z3S1JDHXQ');
+`}}
+        />
       </body>
     </html>
   );
