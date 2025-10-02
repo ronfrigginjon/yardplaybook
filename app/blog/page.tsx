@@ -32,8 +32,8 @@ export default function BlogIndexPage() {
         {posts.map((p) => (
           <li key={p.slug} className="rounded-lg border p-5 hover:shadow-sm">
             <h2 className="text-2xl font-semibold">
-              <Link className="text-green-800 underline" href={`/blog/${p.slug}`}>
-                {p.title}
+              <Link className="text-green-800 underline" href={{ pathname: '/blog/[slug]', query: { slug: p.slug } }}>
+                 {p.title}
               </Link>
             </h2>
             <p className="text-gray-600 mt-2">{p.description}</p>
