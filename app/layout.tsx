@@ -59,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="font-bold">Popular Topics</div>
               <ul className="mt-3 space-y-1 text-sm opacity-90">
                 <li><Link href="/blog/overseeding" className="hover:underline">Overseeding</Link></li>
-                <li><Link href="/blog/fertilizing" className="hover:underline">Fertilizing</Link></li>
                 <li><Link href="/blog/winterize" className="hover:underline">Winterizing</Link></li>
               </ul>
             </div>
