@@ -89,7 +89,7 @@ export default function OverseedingPage() {
 
       <h2>Soil Temperature &gt; Calendar</h2>
       <p>
-        Weather apps are fine, but a <em>soil</em> thermometer ends the guesswork. Insert 2–3" deep in multiple spots.
+        Weather apps are fine, but a <em>soil</em> thermometer ends the guesswork. Insert 2–3&quot; deep in multiple spots.
         In cool-season belts, aim for the 55–70°F band. In warm-season areas, wait for consistent 65°F+ before you broadcast seed.
       </p>
 
@@ -97,10 +97,10 @@ export default function OverseedingPage() {
       <p>Overseeding success is 80% prep. Give seed a soft landing and good contact so it doesn’t dry out or wash away.</p>
       <ol>
         <li><strong>Mow low (but don’t scalp):</strong> Drop your mower one notch below normal to open the canopy. Bag the clippings.</li>
-        <li><strong>Dethatch (if needed):</strong> If thatch &gt; ½", remove it so seed hits soil, not a sponge layer.</li>
+        <li><strong>Dethatch (if needed):</strong> If thatch &gt; ½&quot;, remove it so seed hits soil, not a sponge layer.</li>
         <li><strong>Core aerate (ideal):</strong> Plugs create perfect seed pockets and improve water/air flow.</li>
         <li><strong>Rake clean:</strong> Remove debris so seed isn’t blocked.</li>
-        <li><strong>Topdress (optional but awesome):</strong> A light ¼" layer of compost or screened soil improves germination and evens out bumps.</li>
+        <li><strong>Topdress (optional but awesome):</strong> A light ¼&quot; layer of compost or screened soil improves germination and evens out bumps.</li>
       </ol>
 
       <h2>Choose the Right Seed + Rate</h2>
@@ -120,7 +120,7 @@ export default function OverseedingPage() {
       <ol>
         <li><strong>Load a spreader</strong> with half your seed. Make a north–south pass.</li>
         <li><strong>Load the second half</strong> and make an east–west pass.</li>
-        <li><strong>Lightly rake</strong> to pull seed into the top ¼" of soil. Don’t bury it.</li>
+        <li><strong>Lightly rake</strong> to pull seed into the top ¼&quot; of soil. Don’t bury it.</li>
         <li><strong>Topdress lightly</strong> (optional) to improve moisture retention and seed-to-soil contact.</li>
         <li><strong>Roll (optional):</strong> A water roller helps press seed in on bumpy ground.</li>
       </ol>
@@ -128,7 +128,7 @@ export default function OverseedingPage() {
       <h2>Watering Schedule: Weeks 0–4</h2>
       <p>Your goal is constant surface moisture—not puddles. Adjust for wind/slope/sun.</p>
       <ul>
-        <li><strong>Days 0–7:</strong> Mist 2–4×/day to keep top ½" moist.</li>
+        <li><strong>Days 0–7:</strong> Mist 2–4×/day to keep top ½&quot; moist.</li>
         <li><strong>Days 8–14:</strong> Taper to 1–2×/day as sprouts take.</li>
         <li><strong>Days 15–21:</strong> Shift to once daily, slightly deeper soak.</li>
         <li><strong>Days 22–28:</strong> Water 3–4×/week, deeper yet—train roots.</li>
@@ -143,7 +143,7 @@ export default function OverseedingPage() {
 
       <h3>When to Mow</h3>
       <ul>
-        <li>First mow when new grass hits ~3–4". Sharp blade, gentle turns. Remove ≤ ⅓ of the blade.</li>
+        <li>First mow when new grass hits ~3–4&quot;. Sharp blade, gentle turns. Remove ≤ ⅓ of the blade.</li>
         <li>Keep the mower higher than usual for the first few cuts to reduce stress.</li>
       </ul>
 

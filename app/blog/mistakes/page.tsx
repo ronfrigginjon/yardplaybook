@@ -31,7 +31,7 @@ export default function MistakesPage() {
         </li>
         <li>
           <strong>Ignoring soil health:</strong> Aerate compacted areas, add organic matter, and
-          keep thatch under ½".
+          keep thatch under ½&quot;.
         </li>
         <li>
           <strong>Skipping prep before seeding:</strong> Seed needs soil contact. Rake, dethatch,
